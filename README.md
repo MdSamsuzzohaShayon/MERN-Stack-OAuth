@@ -7,7 +7,8 @@
  - [express](https://expressjs.com/)
  - [passport-google-oauth20](http://www.passportjs.org/packages/passport-google-oauth20/)
  - [passport](http://www.passportjs.org/)
- - 
+ - [mongoose](https://mongoosejs.com/docs/index.html)
+ 
 
 
  ### Google API
@@ -25,6 +26,8 @@
 
   9. For temporarily change or add new authorised redirects urls from client id for web application
   10. URL `http://localhost:5000/auth/google/callback`
+  11. **Google API Error** if any error happen make delete oauth client id and make it again
+
 
 ### MongoDB
 

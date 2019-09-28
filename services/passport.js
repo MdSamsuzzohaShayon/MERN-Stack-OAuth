@@ -10,10 +10,10 @@ passport.use(
         callbackURL: "/auth/google/callback"
     },
     (accessToken, refreshToken, profile, done)=>{
-        console.log("Access Token: " + accessToken);
-        console.log("Refresh Token: " + refreshToken);
+        // console.log("Access Token: " + accessToken);
+        // console.log("Refresh Token: " + refreshToken);
         console.log("profile: " + profile);
-        console.log("done: " + done);        
+        // console.log("done: " + done);        
     }
     ),
     
