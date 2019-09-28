@@ -23,4 +23,5 @@
 
   ![Client OAuth ID](screenshots/Screenshot_1.png)
 
-  9. 
+  9. For temporarily change or add new authorised redirects urls from client id for web application
+  10. URL `http://localhost:5000/auth/google/callback`

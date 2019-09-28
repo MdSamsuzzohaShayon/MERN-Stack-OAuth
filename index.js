@@ -34,7 +34,12 @@ passport.use(
 );
 
 
-app.get('/auth/google', passport.authenticate('google'));
+
+// 9. For temporarily change or add new authorised redirects urls from client id for web application
+// 10. URL `http://localhost:5000/auth/google/callback`
+app.get('/auth/google', passport.authenticate('google', {
+    scope: ['profile', 'email']
+}));
 
 
 app.listen(PORT, ()=>{
