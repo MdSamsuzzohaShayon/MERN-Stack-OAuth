@@ -4,5 +4,23 @@
 
 **All packages to use**
 
- - express
- -
+ - [express](https://expressjs.com/)
+ - [passport-google-oauth20](http://www.passportjs.org/packages/passport-google-oauth20/)
+ - [passport](http://www.passportjs.org/)
+ - 
+
+
+ ### Google API
+
+  1. Go to [google developer console](https://console.developers.google.com)
+  2. Sign up and create a new project
+  3. ENABLE API AND SERVICES
+  4. From **API Library** search for **Google+ API** 
+  5. ENABLE api
+  6. Cofigure Consent Screen -> Set Application name, logo and we can leave rest
+  7. Credentials -> Create Creadentials -> OAuth client ID
+  8. fill the form
+
+  ![Client OAuth ID](screenshots/Screenshot_1.png)
+
+  9. 
