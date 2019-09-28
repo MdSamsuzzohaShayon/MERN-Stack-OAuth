@@ -42,6 +42,11 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 
+
+// REDIRECT REQUEST
+app.get('/auth/google/callback', passport.authenticate('google'));
+
+
 app.listen(PORT, ()=>{
     console.log(`Server running: 127.0.0.1:${PORT}`);    
 })
