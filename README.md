@@ -25,3 +25,13 @@
 
   9. For temporarily change or add new authorised redirects urls from client id for web application
   10. URL `http://localhost:5000/auth/google/callback`
+
+### MongoDB
+
+`npm install mongoose`
+
+ 1. go to [mongodb atlas](https://cloud.mongodb.com) and login or register -> Create new project
+ 2. Build Cluster -> AWS -> Select a country with **free tier available**
+ 3. Security -> database access -> create a user 
+ 4. Network Access -> add current IP Address to IP Whitelist 
+ 5. Cluster0(Default name) -> Connect

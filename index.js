@@ -2,6 +2,9 @@ const express = require('express');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('./config/keys');
+const authRoutes = require('./routes/authRoute');
+
+
 
 const app = express();
 
@@ -16,35 +19,13 @@ const PORT = process.env.PORT || 5000;
 
 
 // Configure Strategy
-// The Google authentication strategy authenticates users using a Google account and OAuth 2.0 tokens
-passport.use(
-    new GoogleStrategy({
-        clientID: keys.googleClientID,
-        clientSecret: keys.googleClientSecret,
-        callbackURL: "/auth/google/callback"
-    },
-    (accessToken, refreshToken, profile, done)=>{
-        console.log("Access Token: " + accessToken);
-        console.log("Refresh Token: " + refreshToken);
-        console.log("profile: " + profile);
-        console.log("done: " + done);        
-    }
-    ),
-    
-);
+require('./services/passport');
 
 
 
-// 9. For temporarily change or add new authorised redirects urls from client id for web application
-// 10. URL `http://localhost:5000/auth/google/callback`
-app.get('/auth/google', passport.authenticate('google', {
-    scope: ['profile', 'email']
-}));
 
-
-
-// REDIRECT REQUEST
-app.get('/auth/google/callback', passport.authenticate('google'));
+// ROUTES
+app.use('/', authRoutes);
 
 
 app.listen(PORT, ()=>{
