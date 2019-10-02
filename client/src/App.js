@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+      <h1>Coders Never quiet!</h1>
+      {/* <a href="http://localhost:5000/auth/google">Signup</a> */}
+      <a href="/auth/google">Signup</a>
+
+{/* GO TO GOOGLE DEVELOPER CONSOLE -> CREDENTIALS -> CLIENT NAME */}
+      {/* Authorised redirect URIs */}
+      {/* http://localhost:3000/auth/google/callback */}
     </div>
   );
 }
