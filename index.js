@@ -1,7 +1,9 @@
 const express = require('express');
+const cookieSession = require('cookie-session');
 const authRoutes = require('./routes/authRoute');
 const mongoose = require('mongoose');
 const keys =require('./config/keys');
+const passport = require('passport');
 
 
 const app = express();
@@ -23,6 +25,20 @@ require('./services/passport');
 mongoose.connect(keys.mongoURI, ()=>{
     console.log('Connected to DB');
 });
+
+
+// A user session can be stored in two main ways with cookies: on the server or on the client. This module stores the session data on the client within a cookie,
+// ENCRIPT DATA THOUGH COOKIE 
+app.use(cookieSession({
+    // IT WILL EXPIRE AFTER 30 DAYS
+    maxAge: 30 * 24 * 60 * 60 *1000 ,
+    keys: [keys.cookieKey]
+}));
+
+
+// LINK COOKIE TO PASSPORT
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 

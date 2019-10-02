@@ -4,6 +4,23 @@ const keys = require('../config/keys');
 const mongoose = require('mongoose');
 const User = mongoose.model('users');
 
+
+
+// IDENTIFYING THE USER AND ENCRIPTING
+passport.serializeUser((user, done)=>{
+    done(null, user.id);
+});
+
+
+// ID CONVERT TO USER AND DECRIPTING
+passport.deserializeUser((id, done)=>{
+    User.findById(id).then(user=>{
+        done(null, user);
+    });
+})
+
+
+
 // The Google authentication strategy authenticates users using a Google account and OAuth 2.0 tokens
 passport.use(
     new GoogleStrategy({
